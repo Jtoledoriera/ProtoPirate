@@ -14,12 +14,12 @@ static void protopirate_scene_receiver_info_widget_callback(
             view_dispatcher_send_custom_event(
                 app->view_dispatcher, ProtoPirateCustomEventReceiverInfoSave);
         }
-#ifdef ENABLE_EMULATE_FEATURE
+            
         else if(result == GuiButtonTypeLeft) {
             view_dispatcher_send_custom_event(
                 app->view_dispatcher, ProtoPirateCustomEventReceiverInfoEmulate);
         }
-#endif
+
     }
 }
 
@@ -60,7 +60,7 @@ void protopirate_scene_receiver_info_on_enter(void* context) {
     widget_add_string_multiline_element(
         app->widget, 0, 11, AlignLeft, AlignTop, FontSecondary, text_str);
 
-#ifdef ENABLE_EMULATE_FEATURE
+
     // Add emulate button on the left
     widget_add_button_element(
         app->widget,
@@ -68,7 +68,7 @@ void protopirate_scene_receiver_info_on_enter(void* context) {
         "Emulate",
         protopirate_scene_receiver_info_widget_callback,
         app);
-#endif
+
 
     // Add save button on the right
     widget_add_button_element(
