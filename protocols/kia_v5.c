@@ -17,7 +17,7 @@ static void build_keystore_from_mfkey(uint8_t* result) {
     }
 }
 
-static uint8_t keystore_bytes[] = {};
+static uint8_t keystore_bytes[8] = {0};
 
 static uint16_t mixer_decode(uint32_t encrypted) {
     uint8_t s0 = (encrypted & 0xFF);
